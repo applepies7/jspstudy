@@ -13,6 +13,12 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
+<context-param>
+<param-name>DB_URL</param-name>
+<param-value>
+jdbc:oracle:thin:@127.0.0.1:1521:xe
+</param-value>
+</context-param>
 
 	<!-- 작성한 서블릿 등록 -->
 	<servlet>
