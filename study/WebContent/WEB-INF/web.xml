@@ -20,10 +20,23 @@ jdbc:oracle:thin:@127.0.0.1:1521:xe
 </param-value>
 </context-param>
 
+<!--common.jsp가 08폴더에 있는 파일에 자동으로 앞에 붙음.  -->
+<jsp-config>
+<jsp-property-group>
+<url-pattern>/08/*</url-pattern>
+<include-prelude>/inc/common_var.jsp</include-prelude>
+</jsp-property-group>
+</jsp-config>
+ 
 	<!-- 작성한 서블릿 등록 -->
 	<servlet>
 		<servlet-name>sum</servlet-name>
 		<servlet-class>com.study.servlet.SumServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>appInit</servlet-name>
+		<servlet-class>com.study.servlet.AppInitLoader</servlet-class>
+		<load-on-startup>2</load-on-startup>
 	</servlet>
 	<!-- 클라이언트 요청과 서블릿 매핑 -->
 	<servlet-mapping>
@@ -50,10 +63,11 @@ jdbc:oracle:thin:@127.0.0.1:1521:xe
 <location>/error/500.jsp</location>
 </error-page>	            
 
-<error-page>
+ <error-page>
 <error-code>404</error-code>
 <location>/error/404.jsp</location>
 </error-page>	            
+<!-- 
 
 <error-page>
 <exception-type>java.lang.RuntimeException</exception-type>
@@ -64,10 +78,5 @@ jdbc:oracle:thin:@127.0.0.1:1521:xe
 <exception-type>java.io.IOException</exception-type>
 <location>/error/errorIO.jsp</location>
 </error-page>	            
-
-<error-page>
-<exception-type>java.lang.IllegalAccessException</exception-type>
-<location>/error/errorIO.jsp</location>
-</error-page>	            
-	            
+-->
 </web-app>
