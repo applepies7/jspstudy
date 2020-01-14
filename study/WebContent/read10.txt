@@ -1,7 +1,7 @@
-<jsp:액션태그 />
-<jsp:useBean />
-<jsp:getProperty/>
-<jsp:setProperty/>
+ <jsp:액션태그 />
+ <jsp:useBean />
+ <jsp:getProperty/>
+ <jsp:setProperty/>
 
 
 
