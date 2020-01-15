@@ -24,8 +24,8 @@ if(vo !=null ) {
 		session.setAttribute("USER_INFO", vo);
 		
 		//remember 조건문 
-		Cookie cookie = new Cookie(,vo.getUserId().);
-		response.addCookie(cookie);
+	/* 	Cookie cookie = new Cookie(,vo.getUserId().);
+		response.addCookie(cookie); */
 		
 	%> <h3>로그인 성공하셨습니다.</h3>
 	<a href="<%=request.getContextPath()%>/index.jsp">Home</a>	
@@ -34,6 +34,7 @@ if(vo !=null ) {
 	%>
 	<h3>아이디/비밀번호을 확인해주세요</h3>
 	<a href="login.jsp">로그인</a>
+	<a href="#" onclick="history.back()">뒤로가기</a>
 	<a href="xxx.jsp">회원가입</a>
 	<a href="<%=request.getContextPath()%>/index.jsp">Home</a>
 	<%
