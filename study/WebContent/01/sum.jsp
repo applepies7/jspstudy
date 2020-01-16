@@ -1,3 +1,4 @@
+<%@page import="com.study.util.FileUtils"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,6 +16,10 @@
 out.println("결과는 :" +  sum);
 	%>
 
+
+<%=
+FileUtils.fancySize(1024*1024)
+%>
 
 </body>
 </html>
