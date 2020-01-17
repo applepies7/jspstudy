@@ -9,6 +9,11 @@
 		<li>홈 </li>
 		<li>게시판</li>
 		<li>상품소개</li>
+		<li> <a href="/study/14/regist.jsp">회원가입</a></li>
+		<li> <a href="inc/changeLocale.jsp?lang=en">Eng</a></li>
+		<li> <a href="inc/changeLocale.jsp?lang=ko">Korean</a></li>
+		<li> <a href="inc/changeLocale.jsp?lang=jp">Japanese</a></li>
+		
 		
 		<%
 	UserVO idchk = (UserVO)session.getAttribute("USER_INFO");

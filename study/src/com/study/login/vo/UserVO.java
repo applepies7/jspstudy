@@ -5,18 +5,18 @@ public class UserVO {
 	private String userId;
 	private String userPass;
 	private String userName;
-	private String userRoll;
+	private String userRole;
 	
 	public UserVO() {
 
 	}
 
-	public UserVO(String userId, String userPass, String userName, String userRoll) {
+	public UserVO(String userId, String userPass, String userName, String userRole) {
 		super();
 		this.userId = userId;
 		this.userPass = userPass;
 		this.userName = userName;
-		this.userRoll = userRoll;
+		this.userRole = userRole;
 	}
 
 	public String getUserId() {
@@ -24,6 +24,7 @@ public class UserVO {
 	}
 
 	public void setUserId(String userId) {
+		System.out.println("getUserId call " + userId + "return");
 		this.userId = userId;
 	}
 
@@ -40,21 +41,22 @@ public class UserVO {
 	}
 
 	public void setUserName(String userName) {
+		System.out.println("getUserName call " + userName + "return");
 		this.userName = userName;
 	}
 
-	public String getUserRoll() {
-		return userRoll;
+	public String getUserRole() {
+		return userRole;
 	}
 
-	public void setUserRoll(String userRoll) {
-		this.userRoll = userRoll;
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
 	}
 
 	@Override
 	public String toString() {
-		return "UserVO [userId=" + userId + ", userPass=" + userPass + ", userName=" + userName + ", userRoll="
-				+ userRoll + "]";
+		return "UserVO [userId=" + userId + ", userPass=" + userPass + ", userName=" + userName + ", userRole="
+				+ userRole + "]";
 	}
 	
 }
