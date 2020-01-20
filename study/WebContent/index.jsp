@@ -1,6 +1,8 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <fmt:setBundle basename="resource.message" var ="bundle"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +20,7 @@
 
 		<!-- main menu -->
 		<div id="main">
-<h3>JSP수업 조앙~</h3>
+<h3><fmt:message bundle="${bundle}" key="front.welcome"/></h3>
 <a href="03/regist.jsp">회원가입</a><br><hr>
 <a href="04/header.jsp">헤더 정보</a><br><hr>
 <%

@@ -12,7 +12,7 @@
     <title>14/ regist.jsp (7일차 카피) </title>
 </head>
 <body>
-	<form name="form" action="result.jsp" method="post">
+	<form name="form" action="/index.jsp" method="post">
 		<fieldset>
 		
 			<legend><fmt:message bundle="${bundle}" key="member.regist.title"/></legend>
@@ -22,27 +22,27 @@
 			<table>
 				<tr>
 				
-					<td><fmt:message bundle="${bundle}" key="member.regist.memId"/></td>
+					<td><fmt:message bundle="${bundle}" key="member.memId"/></td>
                     <td><input type="text" name="memId"></td>
-                    <td style="color: grey;">(4자 이상)</td>
+                    <td style="color: grey;"><fmt:message bundle="${bundle}" key="size"> <fmt:param value="4" /> <fmt:param value="8" /> </fmt:message> </td>
 				</tr>
 				<tr>
-					<td><fmt:message bundle="${bundle}" key="member.regist.memPass"/>
+					<td><fmt:message bundle="${bundle}" key="member.memPass"/>
 					</td>
 					<td><input type="password"  name="memPass"><br>
                         
                     </td>
-                    <td style="color: grey;">숫자로 4자 이상</td>
+                    <td style="color: grey;"><fmt:message bundle="${bundle}" key="min"> <fmt:param value="4" /></fmt:message></td>
 				</tr>
 				<tr>
 				
-					<td><fmt:message bundle="${bundle}" key="member.regist.memName"/></td>
+					<td><fmt:message bundle="${bundle}" key="member.memName"/></td>
                     <td><input type="text" name="memName"></td>
 				</tr>
 				
 				<tr>
 				
-					<td><fmt:message bundle="${bundle}" key="member.regist.memLike"/></td>
+					<td><fmt:message bundle="${bundle}" key="member.memLike"/></td>
 					<td>
 					<select name="memLike">
 					<option value="">휴식</option>
@@ -53,21 +53,18 @@
 				</tr>
 				<tr>
 				
-					<td><fmt:message bundle="${bundle}" key="member.regist.memBir"/></td>
+					<td><fmt:message bundle="${bundle}" key="member.memBir"/></td>
                     <td><input type="date"  name="memBir"></td>
-                    <td style="color: grey;">선택해야함</td>
 				</tr>
 				<tr>
-					<td><fmt:message bundle="${bundle}" key="member.regist.memMail"/></td>
+					<td><fmt:message bundle="${bundle}" key="member.memMail"/></td>
 					<td>
                         <input type="email"  name="memEmail"> @ 
                     </td>
-                    <td style="color: grey;">작성해야함</td>
 				</tr>
 				<tr>
-					<td><fmt:message bundle="${bundle}" key="member.regist.memo"/></td>
+					<td><fmt:message bundle="${bundle}" key="member.memo"/></td>
                     <td><textarea  rows="3" cols="50" name="memo"></textarea></td>
-                    <td style="color: grey;">작성해야함</td>
 				</tr>
 				<tr>
 					<td colspan="2">
