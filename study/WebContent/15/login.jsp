@@ -9,7 +9,7 @@
     <title>10/ regist.jsp (7일차 카피) </title>
 </head>
 <body>
-	<form name="form" action="loginCheck.jsp" method="post">
+	<form name="form" action="loginCheck.jsp" method="get">
 		<fieldset>
 			<legend>로그인</legend>
 

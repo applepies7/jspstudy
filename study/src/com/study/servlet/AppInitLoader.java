@@ -12,8 +12,19 @@ public class AppInitLoader extends HttpServlet {
 		//현객체가 메모리 올라올때 초기화.
 		System.out.println("===================================");
 		System.out.println(getClass().getSimpleName() + " init call" );
-		ServletContext application = getServletContext();
-		application.setAttribute("DB" ,"jdbc:oracle:this:@127.0.0.1:1521:xe");
+//		ServletContext application = getServletContext();
+//		application.setAttribute("DB" ,"jdbc:oracle:this:@127.0.0.1:1521:xe");
+		try { 
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("오라클 드라이버 로드 성공");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			throw new ServletException("DB 드라이버 로드 실패",e);
+		}
+
+	
+	
+	
 	}
 
 

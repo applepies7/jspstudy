@@ -14,7 +14,6 @@
 <body>
 
 <%
-
 Connection conn = null; //커넥션 티켓
 Statement stmt = null; // SQL선언문
 ResultSet rs = null; //질의 결과
@@ -23,7 +22,7 @@ OracleDriver driver = new OracleDriver();
 try{
 	
 //커넥션 설정
-conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.20.37:1521:xe", "java", "oracle");
+conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.20.54:1521:xe", "java", "oracle");
 
 // SQL선언문 
 stmt = conn.createStatement();
@@ -61,7 +60,7 @@ while(rs.next()){//next , first, last, absolute, prior 등이 있음.
 %>
 <tr>
 <td><%=rs.getString(1) %></td>
-<td><a href="memberView.jsp?memId=<%=rs.getString("mem_id") %>"><%=rs.getString("mem_name") %></a></td>
+<td><%=rs.getString("mem_name") %></td>
 <td><%=rs.getString("mem_add1") %>
     <%=rs.getString("mem_add2") %></td>
 <td><%=rs.getString("mem_hp") %></td>
