@@ -1,6 +1,6 @@
 package com.study.member.vo;
 
-public class Member {
+public class MemberVO {
 	private String memId; /* 회원 아이디 */
 	private String memPass; /* 회원 비밀번호 */
 	private String memName; /**/
@@ -17,11 +17,11 @@ public class Member {
 	private int memMileage; /**/
 	private String memDelete; /**/
 
-	public Member() {
+	public MemberVO() {
 		super();
 	}
 
-	public Member(String memId, String memPass, String memName, String memRegno1, String memRegno2, String memBir,
+	public MemberVO(String memId, String memPass, String memName, String memRegno1, String memRegno2, String memBir,
 			String memZip, String memAdd1, String memAdd2, String memHp, String memMail, String memJob, String memLike,
 			int memMileage, String memDelete) {
 		super();

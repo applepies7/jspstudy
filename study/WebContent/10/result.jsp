@@ -20,7 +20,7 @@ pw = <%=pw %> <br>
 name = <%=name %> <br>
 
 <h4>useBean, set/get Property</h4>
-<jsp:useBean id="member" class="com.study.member.vo.Member" scope="page"/>
+<jsp:useBean id="member" class="com.study.member.vo.MemberVO" scope="page"/>
 <jsp:setProperty property="memId" name="member" param="memId"/>
 <jsp:setProperty property="memPass" name="member" param="memPass"/>
 <jsp:setProperty property="memName" name="member" param="memName"/>
@@ -32,7 +32,7 @@ name = <jsp:getProperty property="memName" name="member"/><br>
 job = <jsp:getProperty property="memJob" name="member"/><br>
 
 <h4>useBean, setProperty * EL사용 </h4>
-<jsp:useBean id="member2" class="com.study.member.vo.Member" scope="page"/>
+<jsp:useBean id="member2" class="com.study.member.vo.MemberVO" scope="page"/>
 <jsp:setProperty property="*" name="member2" />
 <jsp:setProperty property="memJob" name="member2" value = "열심히 공부중"/>
 
