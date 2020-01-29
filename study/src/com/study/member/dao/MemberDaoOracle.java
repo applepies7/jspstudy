@@ -36,8 +36,6 @@ public class MemberDaoOracle implements IMemberDao {
 			sb.append("where member.mem_like = comm_code.comm_cd");
 			sb.append("and member.mem_job = c.comm_cd");			
 			
-			
-			
 			pstmt = conn.prepareStatement(sb.toString());
 			rs = pstmt.executeQuery();
 			List<MemberVO> list = new ArrayList<MemberVO>();
