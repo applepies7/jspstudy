@@ -23,36 +23,37 @@ public class MemberDaoOracle implements IMemberDao {
 
 			conn = DriverManager.getConnection("jdbc:apache:commons:dbcp:study");
 
-			
-			sb.append("select member.mem_id");
-			sb.append(", member.mem_name");
-			sb.append(", member.mem_add1");
-			sb.append(", member.mem_add2");
-			sb.append(", member.mem_job");
-			sb.append(", comm_code.comm_nm");
-			sb.append(", c.comm_nm as mem_jobs");
-			sb.append(", member.mem_mileage");
-			sb.append("FROM member,comm_code,comm_code c");
-			sb.append("where member.mem_like = comm_code.comm_cd");
-			sb.append("and member.mem_job = c.comm_cd");			
-			
+			sb.append(" select member.mem_id	");
+			sb.append("	, member.mem_name		");
+			sb.append("	, member.mem_add1		");
+			sb.append("	, member.mem_add2		");
+			sb.append("	, member.mem_job		");
+			sb.append("	, comm_code.comm_nm as mem_likenm		");
+			sb.append("	, c.comm_nm as mem_jobnm	");
+			sb.append("	, member.mem_mileage		");
+			sb.append("FROM member,comm_code,comm_code c	");
+			sb.append("where member.mem_like = comm_code.comm_cd	");
+			sb.append("and member.mem_job = c.comm_cd	");			
+			sb.append("ORDER BY mem_id ASC ");			
+			System.out.println(sb.toString());
 			pstmt = conn.prepareStatement(sb.toString());
 			rs = pstmt.executeQuery();
 			List<MemberVO> list = new ArrayList<MemberVO>();
+			MemberVO member = null;
 			while (rs.next()) {
-				MemberVO member = new MemberVO();
-				member.setMemId(rs.getString("mem_id"));
+				member = new MemberVO();           
+				member.setMemId(rs.getString("mem_id"));    
 				member.setMemName(rs.getString("mem_name"));
 				member.setMemAdd1(rs.getString("mem_add1"));
 				member.setMemAdd2(rs.getString("mem_add2"));
-				member.setMemJob(rs.getString("mem_jobs"));
+				member.setMemJobnm(rs.getString("mem_jobnm"));  
 				member.setMemMileage(rs.getInt("mem_mileage"));
 				list.add(member);
 			}
 			return list;
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 			throw e;
 		} finally {
 
@@ -79,7 +80,7 @@ public class MemberDaoOracle implements IMemberDao {
 			return null;
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 			throw e;
 		} finally {
 
@@ -105,7 +106,7 @@ public class MemberDaoOracle implements IMemberDao {
 			return 0;
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 			throw e;
 		} finally {
 
@@ -113,10 +114,9 @@ public class MemberDaoOracle implements IMemberDao {
 			if (pstmt != null) try { pstmt.close();} catch (Exception e) {}
 			if (conn != null) try { conn.close();} catch (Exception e) {}
 
-		}
 
 	}
-
+	}
 	@Override
 	public int updateMember(MemberVO member) throws SQLException {
 		Connection conn = null; // 커넥션 티켓
@@ -132,7 +132,7 @@ public class MemberDaoOracle implements IMemberDao {
 			return 0;
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 			throw e;
 		} finally {
 
@@ -159,7 +159,7 @@ public class MemberDaoOracle implements IMemberDao {
 			return 0;
 
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			e.printStackTrace();
 			throw e;
 		} finally {
 

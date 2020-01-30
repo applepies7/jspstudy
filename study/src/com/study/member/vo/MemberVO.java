@@ -16,14 +16,21 @@ public class MemberVO {
 	private String memLike; /**/
 	private int memMileage; /**/
 	private String memDelete; /**/
-
+	private String memJobnm; /**/
+	private String memLikenm; /**/
+	
+	
+	
+	
 	public MemberVO() {
 		super();
 	}
 
+	
+
 	public MemberVO(String memId, String memPass, String memName, String memRegno1, String memRegno2, String memBir,
 			String memZip, String memAdd1, String memAdd2, String memHp, String memMail, String memJob, String memLike,
-			int memMileage, String memDelete) {
+			int memMileage, String memDelete, String memJobnm, String memLikenm) {
 		super();
 		this.memId = memId;
 		this.memPass = memPass;
@@ -40,7 +47,11 @@ public class MemberVO {
 		this.memLike = memLike;
 		this.memMileage = memMileage;
 		this.memDelete = memDelete;
+		this.memJobnm = memJobnm;
+		this.memLikenm = memLikenm;
 	}
+
+
 
 	public String getMemId() {
 		return memId;
@@ -162,14 +173,34 @@ public class MemberVO {
 		this.memDelete = memDelete;
 	}
 
-	@Override
-	public String toString() {
-		return "Member [memId=" + memId + ", memPass=" + memPass + ", memName=" + memName + ", memRegno1=" + memRegno1
-				+ ", memRegno2=" + memRegno2 + ", memBir=" + memBir + ", memZip=" + memZip + ", memAdd1=" + memAdd1
-				+ ", memAdd2=" + memAdd2 + ", memHp=" + memHp + ", memMail=" + memMail + ", memJob=" + memJob
-				+ ", memLike=" + memLike + ", memMileage=" + memMileage + ", memDelete=" + memDelete + "]";
+	public String getMemJobnm() {
+		return memJobnm;
 	}
 
+	public void setMemJobnm(String memJobnm) {
+		this.memJobnm = memJobnm;
+	}
+
+	public String getMemLikenm() {
+		return memLikenm;
+	}
+
+	public void setMemLikenm(String memLikenm) {
+		this.memLikenm = memLikenm;
+	}
+
+	@Override
+	public String toString() {
+		return "MemberVO [memId=" + memId + ", memPass=" + memPass + ", memName=" + memName + ", memRegno1=" + memRegno1
+				+ ", memRegno2=" + memRegno2 + ", memBir=" + memBir + ", memZip=" + memZip + ", memAdd1=" + memAdd1
+				+ ", memAdd2=" + memAdd2 + ", memHp=" + memHp + ", memMail=" + memMail + ", memJob=" + memJob
+				+ ", memLike=" + memLike + ", memMileage=" + memMileage + ", memDelete=" + memDelete + ", memJobnm="
+				+ memJobnm + ", memLikenm=" + memLikenm + "]";
+	}
+	
+	
+
+	
 	
 	
 	

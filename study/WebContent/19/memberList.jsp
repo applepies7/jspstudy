@@ -5,10 +5,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <%-- <%@include file="/WEB-INF/inc/common_header.jsp" %> --%>
+    <%@include file="/WEB-INF/common_header.jsp" %>
   	<title>회원목록</title>
   </head>
 <body>
@@ -17,7 +18,7 @@
 	<h3>회원 목록</h3>
 </div>
 <div class="row">
-	<a href="memberForm.jsp" class="btn btn-primary btn-sm" >
+	<a href="memberForm.jsp" class="btn btn-primary btn-xs" >
 		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 		회원가입
 	</a>
@@ -26,9 +27,9 @@
 	IMemberDao memberDao = new MemberDaoOracle();
 	List<MemberVO> list = memberDao.getMemberList();
 	request.setAttribute("list", list);
-	System.out.println(list);
+	
 	%>
-<table>
+<table class="table table-striped table-bordered">
 	<colgroup>
 		<col width="5%" />
 		<col width="10%" />
@@ -53,7 +54,7 @@
 		<td>${vo.memId}</td>
 		<td>${vo.memName}</td>
 		<td>${vo.memAdd1}${vo.memAdd2 }</td>
-		<td>${vo.memJob }</td>
+		<td>${vo.memJobnm }</td>
 		<td>${vo.memMileage }</td>
 	</tr>
 	</c:forEach>

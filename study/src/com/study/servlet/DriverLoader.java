@@ -28,7 +28,7 @@ public class DriverLoader extends HttpServlet {
 		// 1. 드라이버 로드
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("드라이버 로딩 성공");
+			System.out.println("OracleDriver 드라이버 로딩 성공");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			throw new RuntimeException("fail to JDBC Driver ", e);
@@ -64,6 +64,8 @@ public class DriverLoader extends HttpServlet {
 			//연결 URL 설정
 			PoolingDriver driver =  (PoolingDriver)DriverManager.getDriver("jdbc:apache:commons:dbcp:");
 			driver.registerPool("study",connectionPool);
+			System.out.println("DBCP 로드");
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);

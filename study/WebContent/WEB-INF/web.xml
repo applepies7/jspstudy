@@ -6,11 +6,7 @@
 	<display-name>Study</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index.jsp</welcome-file>
-		<welcome-file>default.html</welcome-file>
-		<welcome-file>default.htm</welcome-file>
-		<welcome-file>default.jsp</welcome-file>
+		
 	</welcome-file-list>
 
 	<!-- 작성한 서블릿 등록 -->
@@ -20,7 +16,7 @@
 		<servlet-class>com.study.servlet.DriverLoader</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	
+	<!-- 
 	
 	<servlet>
 		<servlet-name>appInit</servlet-name>
@@ -29,7 +25,7 @@
 	</servlet>
 
 
-
+ -->
 	<!-- url-pattern
 	          확장자 매핑 : *.do, *.nhn *와 사용할 확장자로 매핑
 	          경로 매핑 : /시작해서 /*끝나는 매핑 "/admin/"

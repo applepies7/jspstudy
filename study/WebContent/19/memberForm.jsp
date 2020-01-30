@@ -1,13 +1,30 @@
+<%@page import="com.study.common.dao.CommonCodeDaoOracle"%>
+<%@page import="com.study.common.vo.CodeVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.study.common.dao.ICommonCodeDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-  	<%-- <%@include file="/WEB-INF/inc/common_header.jsp" %> --%>
+  	<%@include file="/WEB-INF/common_header.jsp" %>
   	<title>회원가입</title>
   </head>
 <body>
+<%
+
+ICommonCodeDao codeDao = new CommonCodeDaoOracle();
+List<CodeVO> a  = codeDao.getCodeListByParent("JB00");
+List<CodeVO> b  = codeDao.getCodeListByParent("HB00");
+
+request.setAttribute("jobs", a);
+request.setAttribute("likes", b);
+System.out.println(a);
+System.out.println(b);
+
+%>
+
 <div class="container">
 <h3>회원 가입</h3>
 <form action="memberRegist.jsp" method="post">
@@ -61,11 +78,20 @@
 		<td>
 			<select name="mem_job">
 				<option value="">직업을 선택하세요</option>
+	<c:forEach items="${jobs}" var="jb" varStatus="st">
+			<option value="${jb.commCd}">${jb.commNm}</option>
+		</c:forEach>	
+	 		</select>
+
 		</td>
 		<th>취미</th>
 		<td>
 			<select name="mem_like">
 				<option value="" >취미를 선택하세요</option>
+		<c:forEach items="${likes}" var="hb" >
+			<option value="${hb.commCd}">${hb.commNm}</option>
+		</c:forEach>	
+	
 			</select>
 		</td>
 	</tr>	
