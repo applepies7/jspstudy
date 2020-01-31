@@ -26,6 +26,7 @@
 			</a>
 		</div>
 		<%
+			request.setCharacterEncoding("UTF-8");
 			IMemberDao memberDao = new MemberDaoOracle();
 			List<MemberVO> list = memberDao.getMemberList();
 			request.setAttribute("list", list);
@@ -52,7 +53,7 @@
 				<tr>
 
 					<td>${st.count}</td>
-					<td>${vo.memId}</td>
+					<td><a href="memberView.jsp?memId=${vo.memId}">${vo.memId}</a></td>
 					<td>${vo.memName}</td>
 					<td>${vo.memAdd1}${vo.memAdd2 }</td>
 					<td>${vo.memJobnm }</td>

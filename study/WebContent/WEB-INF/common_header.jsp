@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="<c:url value='/bootstrap-3.3.2-dist/css/bootstrap.min.css'/>" rel="stylesheet">
+    <link href="<c:url value='/css/main.css'/>" rel="stylesheet">
     <script src="<c:url value='/bootstrap-3.3.2-dist/js/bootstrap.min.js'/>"></script>
     <script src="<c:url value='/js/jquery.min.js'/>"></script>
 
