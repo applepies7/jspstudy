@@ -16,7 +16,7 @@
 	cookie.setValue( URLEncoder.encode("밀키스 love","utf-8") );	
 	// 패스를 설정 "/" or "/study" 
 	cookie.setPath("/"); 
-	// 도엠인 설정 (단, 타 사이트는 안됩니다.)
+	// 도메인 설정 (단, 타 사이트는 안됩니다.)
 	cookie.setDomain("milkis.com"); 
 	// 쿠키 유효시간 
 	cookie.setMaxAge(60 * 60 * 24 * 7); // 1주일  
